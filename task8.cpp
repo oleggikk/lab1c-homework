@@ -7,6 +7,7 @@ double median_Of_Triangle (double a, double b, double c)  //function for calcula
     return median;
 }
 
+
 int main()
 {
     double first_side;
@@ -26,21 +27,15 @@ int main()
     std::cout<<"Enter the third side of the triangle: ";
     std::cin>>third_side;
 
-    //calculating the sides of the new triangle using the function
-    first_median = median_Of_Triangle(first_side, second_side, third_side);
-    second_median = median_Of_Triangle(first_side, third_side, second_side);
-    third_median = median_Of_Triangle(second_side, third_side, first_side);
+    //calculating the medians of the new triangle using the function. Triangles are similar (check why on the Internet),
+    // so we can divide the medians by 3
+    first_median = median_Of_Triangle(first_side, second_side, third_side) / 3;
+    second_median = median_Of_Triangle(first_side, third_side, second_side) / 3;
+    third_median = median_Of_Triangle(second_side, third_side, first_side) / 3;
 
-    //calculating the values of medians of the new triangle by calling the function
-    std::cout<<"The first median of the new triangle is equal to: ";
-    std::cout<<median_Of_Triangle(first_median, second_median, third_median)<<std::endl;
+    std::cout<<"The first median is equal to: " << first_median << std::endl;
+    std::cout<<"The second median is equal to: " << second_median << std::endl;
+    std::cout<<"The third median is equal to: " << third_median << std::endl;
 
-    std::cout<<"The second median of the new triangle is equal to: ";
-    std::cout<<median_Of_Triangle(first_median, third_median, second_median)<<std::endl;
-
-    std::cout<<"The third median of the new triangle is equal to: ";
-    std::cout<<median_Of_Triangle(third_median, second_median, first_median)<<std::endl;
-
-
-	return 0;
+    return 0;
 }
