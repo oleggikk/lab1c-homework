@@ -8,11 +8,11 @@ std:: string perfect_Weight(int height, int weight)   //function for recommendat
     }
     else if (height - weight > 100)
     {
-        return "You're overweight. You should consider losing some weight.";
+        return "You're underweight. You should consider gaining some weight.";
     }
     else
     {
-        return "You're underweight. You should consider gaining some weight.";
+        return "You're overweight. You should consider losing some weight.";
     }
 
 }
